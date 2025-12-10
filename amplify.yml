@@ -1,19 +1,17 @@
 version: 1
-applications:
-  - frontend:
-      phases:
-        preBuild:
-          commands:
-            - cd pdf_ui
-            - npm ci
-        build:
-          commands:
-            - npm run build
-      artifacts:
-        baseDirectory: pdf_ui/build
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - pdf_ui/node_modules/**/*
-    appRoot: pdf_ui
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd pdf_ui
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: pdf_ui/build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - pdf_ui/node_modules/**/*
