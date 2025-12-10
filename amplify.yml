@@ -7,7 +7,6 @@ frontend:
         - npm ci
     build:
       commands:
-        - cd pdf_ui
         - npm run build
   artifacts:
     baseDirectory: pdf_ui/build
